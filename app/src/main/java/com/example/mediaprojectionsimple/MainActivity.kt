@@ -45,7 +45,7 @@ class MainActivity : Activity() {
         val content = LinearLayout(this).apply {
             orientation = LinearLayout.VERTICAL
             setPadding(px(22), px(32), px(22), px(32))
-            setBackgroundColor(background)
+            setBackgroundColor(this@MainActivity.background)
         }
         fun label(text: String, size: Float, color: Int, bold: Boolean = false): TextView =
             TextView(this).apply {
@@ -59,7 +59,7 @@ class MainActivity : Activity() {
             this.text = text
             isAllCaps = false
             textSize = 15f
-            setTextColor(if (filled) background else Color.WHITE)
+            setTextColor(if (filled) this@MainActivity.background else Color.WHITE)
             background = GradientDrawable().apply {
                 cornerRadius = px(14).toFloat()
                 setColor(if (filled) accent else surface)
